@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
 
 LABEL version="1.0"
 LABEL description="Base Tomcat7 Openshift3 builder images that takes WAR or Folders and deploys them.  \
-This is to mimic what App Former does by taking WAR files are deploying them to gears.
+This is to mimic what App Former does by taking WAR files are deploying them to gears. \
 use this as the example builder image to build other builder images"
 
 # BASE STI files for this image creation
