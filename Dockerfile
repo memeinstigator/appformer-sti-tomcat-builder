@@ -22,6 +22,17 @@ ADD ./conf/* /opt/webserver/conf/
 
 ENV HOME=/home/jboss JWS_HOME=/opt/webserver
 
+
+# Create jboss group and user, set file ownership to that user.
+RUN groupadd -r jboss -g 433 && \
+    useradd -u 431 -r -g jboss -d /home/jboss -s /sbin/nologin -c "jboss user" jboss && \
+    chown -R jboss:jboss /home/jboss && \
+    chmod -R go+rw /opt/webserver && \
+    chown -eR jboss:jboss /opt/webserver && \
+    mkdir /home/jboss/source && \
+    chown -R jboss:jboss /usr/local/sti
+
+
 WORKDIR /home/jboss
 USER jboss
 
