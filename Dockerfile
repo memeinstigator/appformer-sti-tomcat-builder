@@ -23,7 +23,7 @@ ADD ./conf/* /opt/webserver/conf/
 ENV HOME=/home/jboss JWS_HOME=/opt/webserver
 
 WORKDIR /home/jboss
-#USER jboss
+USER jboss
 
 EXPOSE 8080
 
