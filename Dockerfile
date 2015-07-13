@@ -18,20 +18,18 @@ ADD ./sti/ /usr/local/sti
 ADD ./conf/* /opt/webserver/conf/
 
 # Default destination of scripts and sources, this is where assemble will look for them
-#LABEL io.s2i.destination=/usr/local/sti
-
-ENV HOME=/home/jboss JWS_HOME=/opt/webserver
-
+LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 
 # Create jboss group and user, set file ownership to that user.
-RUN groupadd -r jboss -g 433 && \
-    useradd -u 431 -r -g jboss -d /home/jboss -s /sbin/nologin -c "jboss user" jboss && \
-    chown -R jboss:jboss /home/jboss && \
-    chmod -R go+rw /opt/webserver && \
-    chown -eR jboss:jboss /opt/webserver && \
-    mkdir /home/jboss/source && \
-    chown -R jboss:jboss /usr/local/sti
+#RUN groupadd -r jboss -g 433 && \
+#    useradd -u 431 -r -g jboss -d /home/jboss -s /sbin/nologin -c "jboss user" jboss && \
+#    chown -R jboss:jboss /home/jboss && \
+#    chmod -R go+rw /opt/webserver && \
+#    chown -eR jboss:jboss /opt/webserver && \
+#    mkdir /home/jboss/source && \
+#    chown -R jboss:jboss /usr/local/sti
 
+ENV HOME=/home/jboss JWS_HOME=/opt/webserver
 
 WORKDIR /home/jboss
 USER jboss
