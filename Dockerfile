@@ -7,8 +7,8 @@ FROM tomcat
 # Default destination of scripts and sources, this is where assemble will look for them
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 
-RUN yum install -y mvn && \
-    yum clean all -y \
+#RUN yum install -y mvn && \
+#    yum clean all -y
 
 RUN mkdir /usr/local/sti 
 
