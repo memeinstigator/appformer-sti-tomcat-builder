@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp -r /tmp/src/deployments/* $JWS_HOME/webapps/
+cp -r /tmp/src/deployments/* /usr/local/tomcat/webapps/
 
 # Source code provided to STI will be copied to ${HOME}/source
 # LOCAL_SOURCE_DIR=${HOME}/source
