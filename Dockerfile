@@ -18,7 +18,7 @@ ADD ./sti/ /usr/local/sti
 # BASE config files for this image creation
 # In assemble file, we can provide user of this image to override these files
 # Add sti tomcat customizations for the builder image
-ADD ./conf/* /usr/local/tomcat/conf
+ADD ./conf/* /usr/local/tomcat/conf/
 
 # Default destination of scripts and sources, this is where assemble will look for them
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
