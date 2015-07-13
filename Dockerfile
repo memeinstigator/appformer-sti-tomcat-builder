@@ -17,7 +17,6 @@ LABEL description="Base Tomcat7 Openshift3 builder images that takes WAR or Fold
 This is to mimic what App Former does by taking WAR files are deploying them to gears. \
 use this as the example builder image to build other builder images "
 
-
 # BASE STI files for this image creation
 # Copy the builder STI scripts from the specific language image to /usr/local/sti
 ADD ./sti/ /usr/local/sti
@@ -36,14 +35,14 @@ ADD ./conf/* /usr/local/tomcat/conf/
 #    mkdir /home/jboss/source && \
 #    chown -R jboss:jboss /usr/local/sti
 
-RUN chmod 777 /usr/local/sti/* 
-RUN export PATH=$PATH:/usr/local/sti
-
 ENV HOME=/usr/tomcat JWS_HOME=/usr/local/tomcat
 
-WORKDIR /usr/tomcat
+RUN chmod 777 /usr/local/sti/* 
+#RUN export PATH=$PATH:JWS_HOME/bin:/usr/local/sti
+
+#WORKDIR /usr/tomcat
 #USER jboss
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+CMD ["/usr/local/sti/run", "run"]
