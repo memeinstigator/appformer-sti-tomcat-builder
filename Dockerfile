@@ -46,4 +46,4 @@ WORKDIR /usr/tomcat
 
 EXPOSE 8080
 
-CMD ["usage"]
+CMD ["catalina.sh", "run"]
