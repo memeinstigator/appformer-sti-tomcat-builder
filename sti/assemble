@@ -1,12 +1,14 @@
 #!/bin/sh
 
+cp -r /tmp/src/deployments/* $DEPLOY_DIR/
+
 # Source code provided to STI will be copied to ${HOME}/source
-LOCAL_SOURCE_DIR=${HOME}/source
-mkdir -p $LOCAL_SOURCE_DIR
+# LOCAL_SOURCE_DIR=${HOME}/source
+# mkdir -p $LOCAL_SOURCE_DIR
 
-DEPLOY_DIR=${JWS_HOME}/webapps
+# DEPLOY_DIR=${JWS_HOME}/webapps
 
-cp -r $LOCAL_SOURCE_DIR/deployments/* $DEPLOY_DIR/
+# cp -r /tmp/src/deployments/* $DEPLOY_DIR/
 
 # the subdirectory within LOCAL_SOURCE_DIR from where we should copy build artifacts
 #ARTIFACT_DIR=${ARTIFACT_DIR-target}
