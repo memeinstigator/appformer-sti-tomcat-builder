@@ -36,7 +36,7 @@ ADD ./conf/* /usr/local/tomcat/conf/
 #    mkdir /home/jboss/source && \
 #    chown -R jboss:jboss /usr/local/sti
 
-RUN chmod 777 /usr/local/sti && \
+RUN chmod 777 /usr/local/sti/* && \
     export PATH=$PATH:/usr/local/sti/
 
 ENV HOME=/usr/tomcat JWS_HOME=/usr/tomcat
