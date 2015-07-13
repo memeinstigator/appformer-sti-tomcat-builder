@@ -8,6 +8,8 @@ LABEL description="Base Tomcat7 Openshift3 builder images that takes WAR or Fold
 This is to mimic what App Former does by taking WAR files are deploying them to gears. \
 use this as the example builder image to build other builder images"
 
+RUN mkdir /usr/local/sti
+
 # BASE STI files for this image creation
 # Copy the builder STI scripts from the specific language image to /usr/local/sti
 ADD ./sti/ /usr/local/sti
@@ -15,7 +17,7 @@ ADD ./sti/ /usr/local/sti
 # BASE config files for this image creation
 # In assemble file, we can provide user of this image to override these files
 # Add sti tomcat customizations for the builder image
-ADD ./conf/* /opt/webserver/conf/
+ADD ./conf/* /usr/local/tomcat/conf
 
 # Default destination of scripts and sources, this is where assemble will look for them
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
@@ -29,10 +31,10 @@ LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 #    mkdir /home/jboss/source && \
 #    chown -R jboss:jboss /usr/local/sti
 
-ENV HOME=/home/jboss JWS_HOME=/opt/webserver
+ENV HOME=/usr/tomcat JWS_HOME=/usr/tomcat
 
-WORKDIR /home/jboss
-USER jboss
+WORKDIR /usr/tomcat
+#USER jboss
 
 EXPOSE 8080
 
