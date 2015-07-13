@@ -1,12 +1,13 @@
 # tomcat
 #
 # This image provides a base for building and running tomcat applications.
-FROM registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
+#FROM registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
+FROM tomcat
 
 LABEL version="1.0"
 LABEL description="Base Tomcat7 Openshift3 builder images that takes WAR or Folders and deploys them.  \
 This is to mimic what App Former does by taking WAR files are deploying them to gears. \
-use this as the example builder image to build other builder images"
+use this as the example builder image to build other builder images "
 
 RUN mkdir /usr/local/sti
 
