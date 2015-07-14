@@ -14,7 +14,7 @@ use this as the example builder image to build other builder images "
 
 # BASE STI files for this image creation
 # Copy the builder STI scripts from the specific language image to /usr/local/sti
-#ADD ./sti/ /usr/local/sti
+ADD ./.sti/ /usr/local/sti
 
 # May be a bug STI needs these scripts to be executable
 RUN chmod +x /usr/local/sti/* 
