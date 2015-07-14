@@ -1,4 +1,4 @@
-IMAGE_NAME = docker.io/memeinstigator/s2i-tomcat-builder
+IMAGE_NAME = my-tomcat8-sti-builder
 
 build:
 		docker build -t $(IMAGE_NAME) .
