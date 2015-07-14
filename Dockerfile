@@ -28,4 +28,4 @@ ENV JWS_HOME /usr/local/tomcat
 
 EXPOSE 8080
 
-CMD ["usage"]
+CMD ["/usr/local/sti/usage"]
