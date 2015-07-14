@@ -1,4 +1,4 @@
-IMAGE_NAME = AppFormer-tomcat-sti-builder
+IMAGE_NAME = appformer-sti-tomcat-builder
 
 build:
 		docker build -t $(IMAGE_NAME) .
