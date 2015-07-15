@@ -23,3 +23,5 @@ docker.oi/memeinstigator/s2i-tomcat-builder
 $ docker tag appformer-sti-tomcat-builder docker.io/memeinstigator/appformer-sti-tomcat-builder
 
 $ docker push docker.io/memeinstigator/appformer-sti-tomcat-builder
+
+See sti/usage/README.md for usage
