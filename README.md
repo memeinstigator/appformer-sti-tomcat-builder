@@ -6,7 +6,7 @@ cd appformer-sti-tomcat-builder
  
 # Install make, if you don't have it. "yum -y install make"
 make
- 
+
 # you should have "appformer-sti-tomcat-builder" created in local docker repository
 docker images
 # should have the following image
