@@ -1,6 +1,5 @@
-# tomcat
 #
-# This image provides a base for building and running tomcat applications.
+# This image provides a base STI builder image for building and running tomcat applications.
 # Recommendation: Create a company wide base image from an OS and install basic tools. 
 # Maintain a git project like this and have it build using a CI tool and push it to appropriate docker registory.
 # Use that image as the base for rest of the STI builder images, such as, tomcat, Nodejs etc.
@@ -18,13 +17,13 @@ This is to mimic what App Former does by taking WAR files are deploying them to 
 use this as the example builder image to build other builder images "
 
 # BASE STI files for this image creation
-# Copy the builder STI scripts from the specific language image to /usr/local/sti
+# Copy the builder STI scripts from <git>/sti folder to image /usr/local/sti
 ADD ./sti/ /usr/local/sti
 
-# May be a bug STI needs these scripts to be executable
+# May be a bug in os3 - STI needs these scripts to be executable
 RUN chmod +x /usr/local/sti/* 
 
-# BASE config files for this image creation
+# Copy the tomcat platform custom config files from <git>/config folder to image /usr/local/tomcat/config
 # In assemble file, we can provide user of this image to override these files
 # Add sti tomcat customizations for the builder image
 ADD ./conf/* /usr/local/tomcat/conf/
