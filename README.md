@@ -1,4 +1,4 @@
-This project build an STI tomcat builder image
+This project builds an STI tomcat builder image for use in Redhat OpenShift 3 environment.
 
 Get project code
 
