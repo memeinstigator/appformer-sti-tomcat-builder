@@ -1,6 +1,11 @@
 # tomcat
 #
 # This image provides a base for building and running tomcat applications.
+# Recommendation: Create a company wide base image from an OS and install basic tools. 
+# Maintain a git project like this and have it build using a CI tool and push it to appropriate docker registory.
+# Use that image as the base for rest of the STI builder images, such as, tomcat, Nodejs etc.
+# IMPORTANT: Follow Docker image creation best practices https://docs.docker.com/articles/dockerfile_best-practices/
+# Each line in this file will become a docker layer and it will have a huge impact on efficiency.
 FROM tomcat
 
 RUN mkdir /usr/local/sti 
