@@ -1,6 +1,7 @@
 This project build an STI tomcat builder image
 
 Get project code
+
 $ git pull https://github.com/memeinstigator/appformer-sti-tomcat-builder
 
 $ cd appformer-sti-tomcat-builder
