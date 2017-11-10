@@ -1,4 +1,4 @@
-<h1>Red Hat OpenShift Project<h1>
+# Red Hat OpenShift Project
 
 This project builds an STI tomcat builder image for use in Redhat OpenShift 3 environment.
 
